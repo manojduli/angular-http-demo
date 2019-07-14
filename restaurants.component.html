@@ -1,0 +1,22 @@
+<body>
+<div class="jumbotron">
+  
+      <table border="2" class="table table-hover">
+          <tr>
+            <th>Restaurant Id</th>
+            <th>Restaurant Name</th>
+            <th>Restaurant address</th>
+            <th>Restaurant Category</th>
+          </tr>
+
+          <tr *ngFor="let rest of restaurant">
+            <td>{{rest.id}}</td>
+            <td>{{rest.name}}</td>
+            <td>{{rest.address}}</td>
+            <td>{{rest.category}}</td>
+           
+          </tr>
+        </table>
+  </div>
+
+</body>

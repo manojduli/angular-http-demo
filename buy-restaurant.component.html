@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  
+  <table border="2" class="table table-hover">
+    <tr>
+      <th>Restaurant Id</th>
+      <th>Restaurant Name</th>
+      <th>Restaurant Address</th>
+      <th>Restaurant Category</th>
+      <th>Buy Restaurant</th>
+   </tr>
+    <tr *ngFor="let rest of restaurant">
+      <td>{{rest.id}}</td>
+      <td>{{rest.name}}</td>
+      <td>{{rest.address}}</td>
+      <td>{{rest.category}}</td>
+      <td><button (click)='buy(rest)' class="btn btn-primary">Buy</button></td>
+  </tr>
+  </table>
+  
+  <p> Purchased Details </p>
+   <table border="2" class="table table-hover">
+    <tr>
+      <th>Restaurant Id</th>
+      <th>Restaurant Name</th>
+      <th>Restaurant Address</th>
+      <th>Restaurant Category</th>
+      
+   </tr>
+  <tr ng-if="buy(rest).click">
+      <td>{{this.id}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.address}}</td>
+      <td>{{this.category}}</td>
+  </tr>
+   </table>
+
+   <p ng-if="buy(rest).click == true">
+    you have purchased  restaurant having ID {{this.id}} and name {{this.name}}
+  </p>
+</div>

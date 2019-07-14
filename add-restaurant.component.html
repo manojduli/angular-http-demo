@@ -1,0 +1,58 @@
+<div class="jumbotron">
+ <form  [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+    <div>
+      <label>Restaurant ID:</label>
+      <input type = "text" name="id" class ="form-control" formControlName="id">
+    </div>
+
+    <div >
+      <label>Restaurant Name:</label>
+      <input type = "text" name="name" class ="form-control" formControlName="name">  
+        
+        <div *ngIf="userform.controls['name'].hasError('required')" class="alert alert-danger"> 
+          Please enter name
+        </div> 
+        <div *ngIf="userform.controls['name'].hasError('minlength')" class="alert alert-danger"> 
+          Please enter name atleast 3 characters
+          </div>
+    </div>
+
+    <div >
+      <label>Restaurant Address:</label>
+      <input type = "text"  name="address" class ="form-control" formControlName="address">  
+        <div *ngIf="userform.controls['address'].hasError('required')" class="alert alert-danger">
+            Please enter address
+          </div> 
+          <div *ngIf="userform.controls['address'].hasError('minlength')" class="alert alert-danger"> 
+            Please enter address  atleast 3 characters
+            </div>
+    </div>
+
+    <div >
+      <label>Restaurant Category:</label>
+      <input type = "text" name="category" class ="form-control" formControlName="category"> 
+        <br>   
+    </div>
+    <button type="submit"  [disabled]="!userform.valid" class="btn btn-primary">Add Restaurant</button>
+  </form>
+  <br>
+  <br>
+  <div>
+      <table border="2" class="table table-hover">
+          <tr>
+            <th>Restaurant Id</th>
+            <th>Restaurant name</th>
+            <th>Restaurant Address</th>
+            <th>Restaurant Category</th>
+          </tr>
+
+          <tr *ngFor="let rest of restaurant">
+            <td>{{rest.id}}</td>
+            <td>{{rest.name}}</td>
+            <td>{{rest.address}}</td>
+            <td>{{rest.category}}</td>
+           
+          </tr>
+        </table>
+  </div>
+</div>

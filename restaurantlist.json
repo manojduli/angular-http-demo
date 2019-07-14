@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Kenshi Cafe",
+      "address": "Nawabganj,Hazaribagh",
+      "category": "Veg"
+    },
+    {
+      "id": 2,
+      "name": "Chicken Kitchen",
+      "address": "Mahindra City,Chennai",
+      "category": "Non-Veg"
+    },
+    {
+      "id": 3,
+      "name": "Dine Time",
+      "address": "Mahindra City, Chennai",
+      "category": "Non-Veg"
+    },
+    {
+     "id": 4,
+      "name": "Maggie Mania",
+      "address": "Sipcot, Chennai",
+      "category": "Non-Veg"
+    }
+   
+]
